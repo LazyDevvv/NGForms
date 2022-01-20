@@ -7,18 +7,11 @@
       "address": {
         "street": "Karang Hilir RT. 03 RW. 08",
         "city": "Sukabumi",
-        "state": "Cibadak",
-        "zip": "14850"
+        "state": "Cibadak"
       },
       "phone": [
         "081289900099"
       ]
-    },
-    {
-      "id": 2
-    },
-    {
-      "id": 3
     }
   ]
 }
