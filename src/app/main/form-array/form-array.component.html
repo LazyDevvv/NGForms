@@ -1,0 +1,57 @@
+<app-main></app-main>
+<div class="container p-8">
+  <h1>Dynamic Form Array</h1>
+  <div class="grid grid-flow-col auto-cols-max p-8">
+    <div>
+      <mat-card>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <div formArrayName="characters">
+            <button class="btn-grad" type="button" (click)="addCharacter()">Add Characters</button>
+            <div *ngFor="let char of characters().controls; let i = index">
+              <div [formGroupName]="i">
+                <mat-form-field appearance="outline">
+                  <mat-label>Characters Name</mat-label>
+                  <input matInput type="text" formControlName="name" required>
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="outline">
+                  <mat-label>Nickname</mat-label>
+                  <input matInput type="text" formControlName="nickname" required>
+                </mat-form-field>
+                <button (click)="removeCharacter(i)" class="btn-grad" type="button">Remove
+                  Characters</button>
+
+                <div formArrayName="power">
+                  <div *ngFor="let power of characterPower(i).controls; let powerIndex = index">
+                    <div [formGroupName]="powerIndex">
+                      <mat-form-field appearance="outline">
+                        <mat-label>Power Name</mat-label>
+                        <input matInput type="text" formControlName="powerName" required>
+                      </mat-form-field><br>
+                      <button class="btn-grad" (click)="removeCharacterPower(i,powerIndex)">
+                        Remove Power
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <button type="button" class="btn-grad" (click)="addCharacterPower(i)">
+                  Add Power
+                </button>
+              </div>
+            </div>
+              <hr>
+          </div>
+        </form>
+      </mat-card>
+    </div>
+    &nbsp;&nbsp;
+    <div class="json">
+      <mat-card>
+        <pre>{{this.form.value | json}}</pre>
+      </mat-card>
+    </div>
+  </div>
+
+
+
+</div>

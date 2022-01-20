@@ -1,0 +1,76 @@
+<app-main></app-main>
+<div class="p-4">
+  <h1>Reactive Forms</h1>
+</div>
+<div class="grid grid-flow-col auto-cols-max p-8">
+  <div>
+    <div class="container" [formGroup]="forms">
+      <mat-card>
+        <ng-container formArrayName="profile" *ngFor="let p of profile?.controls; let i= index">
+          <ng-container [formGroupName]="i">
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>First Name</mat-label>
+              <input matInput id="first-name" type="text" formControlName="firstName" required>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Last Name</mat-label>
+              <input matInput id="last-name" type="text" formControlName="lastName" required>
+            </mat-form-field>
+
+            <div formGroupName="address">
+              <h2><strong>Address</strong></h2>
+              <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Street</mat-label>
+                <input matInput id="street" type="text" formControlName="street" required>
+              </mat-form-field>
+
+              <br>
+              <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>City</mat-label>
+                <input matInput id="city" type="text" formControlName="city" required>
+              </mat-form-field>
+
+              <br>
+              <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>State</mat-label>
+                <input matInput id="state" type="text" formControlName="state" required>
+              </mat-form-field>
+              <br>
+              <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Zip Code</mat-label>
+                <input matInput id="zip" type="number" formControlName="zip" required>
+              </mat-form-field>
+            </div>
+            <br>
+
+            <div formArrayName="phone">
+              <h2><strong>Phone</strong></h2>
+              <button (click)="addPhone()" type="button">+ Add Phone Number</button>
+
+              <div *ngFor="let alias of phone?.controls; let i=index">
+                <mat-form-field class="example-full-width" appearance="outline">
+                  <mat-label>Phone</mat-label>
+                  <input matInput id="phone-{{ i }}" type="text" [formControlName]="i" required>
+                </mat-form-field>
+              </div>
+            </div>
+            <br>
+            <button class="btn-grad" type="submit" (click)="onSubmit()">Submit</button>
+          </ng-container>
+        </ng-container>
+
+
+      </mat-card>
+    </div>
+  </div>
+  &nbsp;&nbsp;
+  <div class="json">
+    <mat-card>
+      <div class="p-8">
+        <h2><strong>Form Value JSON</strong></h2>
+        <pre>{{ forms.value | json }}</pre>
+      </div>
+    </mat-card>
+  </div>
+</div>

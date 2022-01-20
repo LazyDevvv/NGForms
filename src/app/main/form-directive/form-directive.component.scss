@@ -1,0 +1,75 @@
+.json {
+  mat-card {
+    border-radius: 10px;
+    background: rgb(70, 58, 180);
+    background: linear-gradient(
+      90deg,
+      rgba(70, 58, 180, 0.9755252442773985) 0%,
+      rgba(166, 54, 180, 1) 14%,
+      rgba(93, 53, 180, 1) 22%,
+      rgba(101, 53, 180, 1) 23%,
+      rgba(103, 52, 180, 1) 26%,
+      rgba(59, 48, 180, 1) 43%,
+      rgba(170, 39, 179, 1) 80%,
+      rgba(69, 79, 252, 1) 100%
+    );
+    color: aliceblue;
+  }
+}
+
+mat-card {
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.btn-grad {
+  background-image: linear-gradient(
+    to right,
+    #314755 0%,
+    #26a0da 51%,
+    #314755 100%
+  );
+}
+.btn-grad {
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+.btn-grad:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 4em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: rgb(57, 28, 110);
+}
+
+h1:hover {
+  font-size: 4em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: rgb(70, 58, 180);
+  color: linear-gradient(
+    90deg,
+    rgba(70, 58, 180, 0.9755252442773985) 0%,
+    rgba(166, 54, 180, 1) 14%,
+    rgba(93, 53, 180, 1) 22%,
+    rgba(101, 53, 180, 1) 23%,
+    rgba(103, 52, 180, 1) 26%,
+    rgba(59, 48, 180, 1) 43%,
+    rgba(170, 39, 179, 1) 80%,
+    rgba(69, 79, 252, 1) 100%
+  );
+}
