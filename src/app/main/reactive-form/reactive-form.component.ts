@@ -52,4 +52,13 @@ export class ReactiveFormComponent implements OnInit {
     return this.fb.control('');
   }
 
+  onSubmit() {
+    const profiles = this.dynamicForms.value;
+    this.profileService.save(profiles).subscribe(
+      (data) => {
+        console.log(data);
+      }
+    );
+  }
+
 }
